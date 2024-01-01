@@ -1,37 +1,37 @@
-import ApiClient from "../src/ApiClient";
-import AggregateIndicators from "../src/model/AggregateIndicators";
-import BondCandles from "../src/model/BondCandles";
-import BondProfile from "../src/model/BondProfile";
-import BondTickData from "../src/model/BondTickData";
-import BondYieldCurve from "../src/model/BondYieldCurve";
-import BasicFinancials from "../src/model/BasicFinancials";
-import EarningResult from "../src/model/EarningResult";
-import CompanyEarningsQualityScore from "../src/model/CompanyEarningsQualityScore";
-import EbitEstimates from "../src/model/EbitEstimates";
-import EbitdaEstimates from "../src/model/EbitdaEstimates";
-import EarningsEstimates from "../src/model/EarningsEstimates";
-import CompanyESG from "../src/model/CompanyESG";
-import CompanyExecutive from "../src/model/CompanyExecutive";
-import CompanyNews from "../src/model/CompanyNews";
-import CompanyProfile from "../src/model/CompanyProfile";
-import RevenueEstimates from "../src/model/RevenueEstimates";
-import CongressionalTrading from "../src/model/CongressionalTrading";
-import CountryMetadata from "../src/model/CountryMetadata";
-import CovidInfo from "../src/model/CovidInfo";
-import CryptoCandles from "../src/model/CryptoCandles";
-import CryptoProfile from "../src/model/CryptoProfile";
-import CryptoSymbol from "../src/model/CryptoSymbol";
-import EarningsCalendar from "../src/model/EarningsCalendar";
-import EconomicCalendar from "../src/model/EconomicCalendar";
-import ETFsCountryExposure from "../src/model/ETFsCountryExposure";
-import EconomicData from "../src/model/EconomicData";
-import EconomicCode from "../src/model/EconomicCode";
-import ETFsHoldings from "../src/model/ETFsHoldings";
+import ApiClient from "../ApiClient";
+import AggregateIndicators from "../model/AggregateIndicators";
+import BondCandles from "../model/BondCandles";
+import BondProfile from "../model/BondProfile";
+import BondTickData from "../model/BondTickData";
+import BondYieldCurve from "../model/BondYieldCurve";
+import BasicFinancials from "../model/BasicFinancials";
+import EarningResult from "../model/EarningResult";
+import CompanyEarningsQualityScore from "../model/CompanyEarningsQualityScore";
+import EbitEstimates from "../model/EbitEstimates";
+import EbitdaEstimates from "../model/EbitdaEstimates";
+import EarningsEstimates from "../model/EarningsEstimates";
+import CompanyESG from "../model/CompanyESG";
+import CompanyExecutive from "../model/CompanyExecutive";
+import CompanyNews from "../model/CompanyNews";
+import CompanyProfile from "../model/CompanyProfile";
+import RevenueEstimates from "../model/RevenueEstimates";
+import CongressionalTrading from "../model/CongressionalTrading";
+import CountryMetadata from "../model/CountryMetadata";
+import CovidInfo from "../model/CovidInfo";
+import CryptoCandles from "../model/CryptoCandles";
+import CryptoProfile from "../model/CryptoProfile";
+import CryptoSymbol from "../model/CryptoSymbol";
+import EarningsCalendar from "../model/EarningsCalendar";
+import EconomicCalendar from "../model/EconomicCalendar";
+import ETFsCountryExposure from "../model/ETFsCountryExposure";
+import EconomicData from "../model/EconomicData";
+import EconomicCode from "../model/EconomicCode";
+import ETFsHoldings from "../model/ETFsHoldings";
 
 type MethodCallback<T> = (error: String, data: T, response: String) => void;
 
 declare module "finnhub" {
-  export default class DefaultApi {
+  export class DefaultApi {
     declare apiClient: ApiClient;
     public constructor(apiClient: ApiClient);
     public aggregateIndicator(
