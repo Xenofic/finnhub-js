@@ -18,7 +18,7 @@ import RevenueEstimates from "../src/model/RevenueEstimates";
 import CongressionalTrading from "../src/model/CongressionalTrading";
 import CountryMetadata from "../src/model/CountryMetadata";
 import CovidInfo from "../src/model/CovidInfo";
-import CryptoCandles from "../src/model/CryptoCandles";
+import CryptoCandles from "./model/CryptoCandles";
 import CryptoProfile from "../src/model/CryptoProfile";
 import CryptoSymbol from "../src/model/CryptoSymbol";
 import EarningsCalendar from "../src/model/EarningsCalendar";
@@ -33,7 +33,7 @@ type MethodCallback<T> = (error: String, data: T, response: String) => void;
 declare module "finnhub" {
   export class DefaultApi {
     declare apiClient: ApiClient;
-    public constructor(apiClient: ApiClient);
+    public constructor(apiClient?: ApiClient);
     public aggregateIndicator(
       symbol: string,
       resolution: string,
