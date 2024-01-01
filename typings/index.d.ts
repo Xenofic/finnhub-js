@@ -1,4 +1,3 @@
-import { Request } from "superagent";
 import ApiClient from "../src/ApiClient";
 import AggregateIndicators from "../src/model/AggregateIndicators";
 import BondCandles from "../src/model/BondCandles";
@@ -265,153 +264,611 @@ declare module "finnhub" {
       opts: { base: string; date: string },
       callback: MethodCallback<Forexrates>
     ): Request;
-    public forexSymbols(exchange: string, callback: MethodCallback<ForexSymbol>): Request;
-    public fundOwnership(symbol: string, opts: {limit: Number}, callback: MethodCallback<FundOwnership>): Request;
-    public indicesConstituents(symbol: String, callback: MethodCallback<IndicesConstituents>): Request;
-    public indicesHistoricalConstituents(symbol: string, callback: MethodCallback<IndicesHistoricalConstituents>): Request;
-   
-    public insiderSentiment(symbol: string, from: Date, to: Date, callback: MethodCallback<InsiderSentiments>);
-    
-    public insiderTransactions(symbol: string, opts:{
-      from: Date
-      to: Date
-    }, callback: MethodCallback<InsiderTransactions>): Request;
-    
-    public institutionalOwnership(symbol: string, cusip: string, from: string, to: string, callback: MethodCallback<InstitutionalOwnership>): Request;
-    
-    public institutionalPortfolio(cik: string, from: string, to: string, callback: MethodCallback<InstitutionalPortfolio>): Request;
-    
-    public institutionalProfile(opts:{
-      cik: string
-    }, callback: MethodCallback<InstitutionalProfile>): Request;
-    
-    public internationalFilings(opts:{
-      symbol: string 
-      country: string
-    }, callback: MethodCallback<InternationalFiling>): Request;
-    
-    public investmentThemes(theme: string, callback: MethodCallback<InvestmentThemes>): Request;
-   
-    public ipoCalendar(from: Date, to: Date, callback: MethodCallback<IPOCalendar>): Request;
-   
-    public isinChange(from: string, to: string, callback: MethodCallback<IsinChange>): Request;
-   
-    public marketHoliday(exchange: string, callback: MethodCallback<MarketHoliday>): Request;
-    
-    public marketNews(category: string, opts:{mind: Number}, callback: MethodCallback<MarketNews>): Request;
-   
-    public marketStatus(exchange: string, callback: MethodCallback<MarketStatus>): Request;
-   
-    public mutualFundCountryExposure(opts:{
-      symbol: string
-      isin: string
-    }, callback: MethodCallback<MutualFundCountryExposure>): Request;
-   
-    public mutualFundEet(isin: string, callback: MethodCallback<MutualFundEet>): Request;
-    
-    public mutualFundEetPai(isin: string, callback: MethodCallback<MutualFundEetPai>): Request;
-   
-    public mutualFundHoldings(opts: {
-      symbol: string
-      isin: string
-      skip: number
-    }, callback: MethodCallback<MutualFundHoldings>): Request;
-    
-    
-    public mutualFundProfile(opts:{symbol: string 
-    isin: string}, callback: MethodCallback<MutualFundProfile>): Request;
-   
-    public mutualFundSectorExposure(opts:{symbol: string
-    isin: string}, callback: MethodCallback<MutualFundSectorExposure>): Request;
-   
-    public newsSentiment(symbol: string, callback: MethodCallback<NewsSentiment>): Request;
-    
-    public ownership(symbol: string, opts:{limit: Number}, callback: MethodCallback<Ownership>): Request;
-    
-    public patternRecognition(symbol: string, resolution: string, callback: MethodCallback<PatternRecognition>): Request;
-    
-   
-    public pressReleases(symbol: string, opts:{from: Date
-    to: Date}, callback: MethodCallback<PressRelease>): Request;
-   
-    public priceMetrics(symbol: string, opts:{ from: Date
-      to: Date}, callback: MethodCallback<PriceMetrics>): Request;
-   
-    public priceTarget(symbol: string, callback: MethodCallback<PriceTarget>): Request;
-   
+    public forexSymbols(
+      exchange: string,
+      callback: MethodCallback<ForexSymbol>
+    ): Request;
+    public fundOwnership(
+      symbol: string,
+      opts: { limit: Number },
+      callback: MethodCallback<FundOwnership>
+    ): Request;
+    public indicesConstituents(
+      symbol: String,
+      callback: MethodCallback<IndicesConstituents>
+    ): Request;
+    public indicesHistoricalConstituents(
+      symbol: string,
+      callback: MethodCallback<IndicesHistoricalConstituents>
+    ): Request;
+
+    public insiderSentiment(
+      symbol: string,
+      from: Date,
+      to: Date,
+      callback: MethodCallback<InsiderSentiments>
+    );
+
+    public insiderTransactions(
+      symbol: string,
+      opts: {
+        from: Date;
+        to: Date;
+      },
+      callback: MethodCallback<InsiderTransactions>
+    ): Request;
+
+    public institutionalOwnership(
+      symbol: string,
+      cusip: string,
+      from: string,
+      to: string,
+      callback: MethodCallback<InstitutionalOwnership>
+    ): Request;
+
+    public institutionalPortfolio(
+      cik: string,
+      from: string,
+      to: string,
+      callback: MethodCallback<InstitutionalPortfolio>
+    ): Request;
+
+    public institutionalProfile(
+      opts: {
+        cik: string;
+      },
+      callback: MethodCallback<InstitutionalProfile>
+    ): Request;
+
+    public internationalFilings(
+      opts: {
+        symbol: string;
+        country: string;
+      },
+      callback: MethodCallback<InternationalFiling>
+    ): Request;
+
+    public investmentThemes(
+      theme: string,
+      callback: MethodCallback<InvestmentThemes>
+    ): Request;
+
+    public ipoCalendar(
+      from: Date,
+      to: Date,
+      callback: MethodCallback<IPOCalendar>
+    ): Request;
+
+    public isinChange(
+      from: string,
+      to: string,
+      callback: MethodCallback<IsinChange>
+    ): Request;
+
+    public marketHoliday(
+      exchange: string,
+      callback: MethodCallback<MarketHoliday>
+    ): Request;
+
+    public marketNews(
+      category: string,
+      opts: { mind: Number },
+      callback: MethodCallback<MarketNews>
+    ): Request;
+
+    public marketStatus(
+      exchange: string,
+      callback: MethodCallback<MarketStatus>
+    ): Request;
+
+    public mutualFundCountryExposure(
+      opts: {
+        symbol: string;
+        isin: string;
+      },
+      callback: MethodCallback<MutualFundCountryExposure>
+    ): Request;
+
+    public mutualFundEet(
+      isin: string,
+      callback: MethodCallback<MutualFundEet>
+    ): Request;
+
+    public mutualFundEetPai(
+      isin: string,
+      callback: MethodCallback<MutualFundEetPai>
+    ): Request;
+
+    public mutualFundHoldings(
+      opts: {
+        symbol: string;
+        isin: string;
+        skip: number;
+      },
+      callback: MethodCallback<MutualFundHoldings>
+    ): Request;
+
+    public mutualFundProfile(
+      opts: { symbol: string; isin: string },
+      callback: MethodCallback<MutualFundProfile>
+    ): Request;
+
+    public mutualFundSectorExposure(
+      opts: { symbol: string; isin: string },
+      callback: MethodCallback<MutualFundSectorExposure>
+    ): Request;
+
+    public newsSentiment(
+      symbol: string,
+      callback: MethodCallback<NewsSentiment>
+    ): Request;
+
+    public ownership(
+      symbol: string,
+      opts: { limit: Number },
+      callback: MethodCallback<Ownership>
+    ): Request;
+
+    public patternRecognition(
+      symbol: string,
+      resolution: string,
+      callback: MethodCallback<PatternRecognition>
+    ): Request;
+
+    public pressReleases(
+      symbol: string,
+      opts: { from: Date; to: Date },
+      callback: MethodCallback<PressRelease>
+    ): Request;
+
+    public priceMetrics(
+      symbol: string,
+      opts: { from: Date; to: Date },
+      callback: MethodCallback<PriceMetrics>
+    ): Request;
+
+    public priceTarget(
+      symbol: string,
+      callback: MethodCallback<PriceTarget>
+    ): Request;
+
     public quote(symbol: string, callback: MethodCallback<Quote>): Request;
-   
-    public recommendationTrends(symbol: string, callback: MethodCallback<RecommendationTrend>): Request;
-    
-    public revenueBreakdown(opts:{symbol: string
-    cik: string}, callback: MethodCallback<RevenueBreakdown>): Request;
-    
-    public sectorMetric(region: string, callback: MethodCallback<SectorMetric>): Request;
-   
-    public similarityIndex(opts:{symbol: string
-      cik: string
-      freq: string
-    }, callback: MethodCallback<SimilarityIndex>): Request;
-   
-    public socialSentiment(symbol: string, opts:{
-      from: Date
-      to: Date 
-    }, callback: MethodCallback<SocialSentiment>): Request;
-   
-    public stockBasicDividends(symbol: string, callback: MethodCallback<Dividends2>): Request;
-  
-    public stockBidask(symbol: string, callback: MethodCallback<LastBidAsk>): Request;
-  
-    public stockCandles(symbol: string, resolution: string, from: number, to: number, callback: MethodCallback<StockCandles>): Request;
-    
-    public stockDividends(symbol: string, from: Date, to: Date, callback: MethodCallback<Dividends>): Request;
-   
-    public stockLobbying(symbol: string, from: Date, to: Date, callback: MethodCallback<LobbyingResult>): Request;
-   
-    public stockNbbo(symbol: string, date: Date, limit: Number, skip: Number, callback: MethodCallback<HistoricalNBBO>): Request;
-   
-    public stockSplits(symbol: string, from: Date, to: Date, callback: MethodCallback<Split>): Request;
-    
-    public stockSymbols(exchange, opts:{
-      mic: string
-      securityType: string
-      currency: string
-    }, callback: MethodCallback<StockSymbol>): Request;
-    
-    public stockTick(symsymbol: stringbol, date: Date, limit: number, skip: Number, callback: MethodCallback<TickData>): Request;
-   
-    public stockUsaSpending(symsymbol: stringbol, from: Date, to: Date, callback: MethodCallback<UsaSpendingResult>): Request;
-   
-    public stockUsptoPatent(symbol: string, from: Date, to: Date, callback: MethodCallback<UsptoPatentResult>): Request;
-    
-    public stockVisaApplication(symbol: string, from: Date, to: Date, callback: MethodCallback<VisaApplicationResult>): Request;
-   
-    public supplyChainRelationships(symbol: string, callback: MethodCallback<SupplyChainRelationships>): Request;
-   
-    public supportResistance(symbol: string, resolution: string, callback: MethodCallback<SupportResistance>): Request;
-   
-    public symbolChange(from: string, to: string, callback: MethodCallback<SymbolChange>): Request;
-   
-    public symbolSearch(q: string, callback: MethodCallback<SymbolLookup>): Request;
-   
+
+    public recommendationTrends(
+      symbol: string,
+      callback: MethodCallback<RecommendationTrend>
+    ): Request;
+
+    public revenueBreakdown(
+      opts: { symbol: string; cik: string },
+      callback: MethodCallback<RevenueBreakdown>
+    ): Request;
+
+    public sectorMetric(
+      region: string,
+      callback: MethodCallback<SectorMetric>
+    ): Request;
+
+    public similarityIndex(
+      opts: { symbol: string; cik: string; freq: string },
+      callback: MethodCallback<SimilarityIndex>
+    ): Request;
+
+    public socialSentiment(
+      symbol: string,
+      opts: {
+        from: Date;
+        to: Date;
+      },
+      callback: MethodCallback<SocialSentiment>
+    ): Request;
+
+    public stockBasicDividends(
+      symbol: string,
+      callback: MethodCallback<Dividends2>
+    ): Request;
+
+    public stockBidask(
+      symbol: string,
+      callback: MethodCallback<LastBidAsk>
+    ): Request;
+
+    public stockCandles(
+      symbol: string,
+      resolution: string,
+      from: number,
+      to: number,
+      callback: MethodCallback<StockCandles>
+    ): Request;
+
+    public stockDividends(
+      symbol: string,
+      from: Date,
+      to: Date,
+      callback: MethodCallback<Dividends>
+    ): Request;
+
+    public stockLobbying(
+      symbol: string,
+      from: Date,
+      to: Date,
+      callback: MethodCallback<LobbyingResult>
+    ): Request;
+
+    public stockNbbo(
+      symbol: string,
+      date: Date,
+      limit: Number,
+      skip: Number,
+      callback: MethodCallback<HistoricalNBBO>
+    ): Request;
+
+    public stockSplits(
+      symbol: string,
+      from: Date,
+      to: Date,
+      callback: MethodCallback<Split>
+    ): Request;
+
+    public stockSymbols(
+      exchange,
+      opts: {
+        mic: string;
+        securityType: string;
+        currency: string;
+      },
+      callback: MethodCallback<StockSymbol>
+    ): Request;
+
+    public stockTick(
+      symsymbol: stringbol,
+      date: Date,
+      limit: number,
+      skip: Number,
+      callback: MethodCallback<TickData>
+    ): Request;
+
+    public stockUsaSpending(
+      symsymbol: stringbol,
+      from: Date,
+      to: Date,
+      callback: MethodCallback<UsaSpendingResult>
+    ): Request;
+
+    public stockUsptoPatent(
+      symbol: string,
+      from: Date,
+      to: Date,
+      callback: MethodCallback<UsptoPatentResult>
+    ): Request;
+
+    public stockVisaApplication(
+      symbol: string,
+      from: Date,
+      to: Date,
+      callback: MethodCallback<VisaApplicationResult>
+    ): Request;
+
+    public supplyChainRelationships(
+      symbol: string,
+      callback: MethodCallback<SupplyChainRelationships>
+    ): Request;
+
+    public supportResistance(
+      symbol: string,
+      resolution: string,
+      callback: MethodCallback<SupportResistance>
+    ): Request;
+
+    public symbolChange(
+      from: string,
+      to: string,
+      callback: MethodCallback<SymbolChange>
+    ): Request;
+
+    public symbolSearch(
+      q: string,
+      callback: MethodCallback<SymbolLookup>
+    ): Request;
+
     public technicalIndicator(
+      opts: {
+        base: string;
+        date: string;
+      },
+      callback: MethodCallback<Forexrates>
+    ): Request;
+
+    public forexSymbols(
+      exchange: string,
+      callback: MethodCallback<string[]>
+    ): Request;
+    public fundOwnership(
+      symbol: string,
+      opts: { limit: Number },
+      callback: MethodCallback<FundOwnership>
+    ): Request;
+    public indicesConstituents(
+      symbol: string,
+      callback: MethodCallback<IndicesConstituents>
+    ): Request;
+    public indicesHistoricalConstituents(
+      symbol: string,
+      callback: MethodCallback<IndicesHistoricalConstituents>
+    ): Request;
+    public insiderSentiment(
+      symbol: string,
+      from: date,
+      to: date,
+      callback: MethodCallback<InsiderSentiments>
+    ): Request;
+    public insiderTransactions(
+      symbol: string,
+      opts: { from: Date; to: Date },
+      callback: MethodCallback<InsiderTransactions>
+    ): Request;
+    public institutionalOwnership(
+      symbol: string,
+      cusip: string,
+      from: string,
+      to: string,
+      callback: MethodCallback<InstitutionalOwnership>
+    ): Request;
+    public institutionalPortfolio(
+      cik: string,
+      from: string,
+      to: string,
+      callback: MethodCallback<InstitutionalPortfolio>
+    ): Request;
+    public institutionalProfile(
+      opts: { cik: string },
+      callback: MethodCallback<InstitutionalProfile>
+    ): Request;
+    public internationalFilings(
+      opts: { symbol: string; country: string },
+      callback: MethodCallback<InternationalFiling>
+    ): Request;
+    public investmentThemes(
+      theme: string,
+      callback: MethodCallback<InvestmentThemes>
+    ): Request;
+    public ipoCalendar(
+      from: Date,
+      to: Date,
+      callback: MethodCallback<IPOCalendar>
+    ): Request;
+    public isinChange(
+      from: Date,
+      to: Date,
+      callback: MethodCallback<IsinChange>
+    ): Request;
+    public marketHoliday(
+      exchange: string,
+      callback: MethodCallback<MarketHoliday>
+    ): Request;
+    public marketNews(
+      category: string,
+      opts: { mind: Number },
+      callback: MethodCallback
+    ): Request;
+    public marketStatus(
+      exchange: string,
+      callback: MethodCallback<MarketStatus>
+    ): Request;
+    public mutualFundCountryExposure(
+      opts: { symbol: string; isin: string },
+      callback: MethodCallback<MutualFundCountryExposure>
+    ): Request;
+    public mutualFundEet(
+      isin: string,
+      callback: MethodCallback<MutualFundEet>
+    ): Request;
+    public mutualFundEetPai(
+      isin: string,
+      callback: MethodCallback<MutualFundEetPai>
+    ): Request;
+    public mutualFundHoldings(
+      opts: { symbol: string; isin: string; skip: Number },
+      callback: MethodCallback<MutualFundHoldings>
+    ): Request;
+    public mutualFundProfile(
+      opts: { symbol: string; isin: string },
+      callback: MethodCallback<MutualFundProfile>
+    ): Request;
+    public mutualFundSectorExposure(
+      opts: { symbol: string; isin: string },
+      callback: MethodCallback<MutualFundSectorExposure>
+    ): Request;
+    public newsSentiment(
+      symbol: string,
+      callback: MethodCallback<NewsSentiment>
+    ): Request;
+    public ownership(
+      symbol: string,
+      opts: { limit: Number },
+      callback: MethodCallback<Ownership>
+    ): Request;
+    public patternRecognition(
+      symbol: string,
+      resolution: string,
+      callback: MethodCallback<PatternRecognition>
+    ): Request;
+    public pressReleases(
+      symbol: string,
+      opts: { from: Date; to: Date },
+      callback: MethodCallback<PressRelease>
+    ): Request;
+    public priceMetrics(
+      symbol: string,
+      opts: { date: string },
+      callback: MethodCallback<PriceMetrics>
+    ): Request;
+    public priceTarget(
+      symbol: string,
+      callback: MethodCallback<PriceTarget>
+    ): Request;
+    public quote(symbol: string, callback: MethodCallback<Quote>): Request;
+    public recommendationTrends(
+      symbol: string,
+      callback: MethodCallback<RecommendationTrend>
+    ): Request;
+    public revenueBreakdown(
+      opts: { symbol: string; cik: string },
+      callback: MethodCallback<RevenueBreakdown>
+    ): Request;
+    public sectorMetric(
+      region: string,
+      callback: MethodCallback<SectorMetric>
+    ): Request;
+    public similarityIndex(
+      opts: {
+        symbol: string;
+        cik: string;
+        freq: string;
+      },
+      callback: MethodCallback<SimilarityIndex>
+    ): Request;
+    public socialSentiment(
+      symbol: string,
+      opts: {
+        from: Date;
+        to: Date;
+      },
+      callback: MethodCallback<SocialSentiment>
+    ): Request;
+    public stockBasicDividends(
+      symbol: string,
+      callback: MethodCallback<Dividends2>
+    ): Request;
+    public stockBidask(
+      symbol: string,
+      callback: MethodCallback<LastBidAsk>
+    ): Request;
+    public stockCandles(
       symbol: string,
       resolution: string,
       from: Number,
       to: Number,
       indicator: string,
-      opts:{indicatorFields: object},
+      opts: { indicatorFields: object },
       callback: MethodCallback<technicalIndicatorCallback>
     ): Request;
-   
-    public transcripts(id: string, callback: MethodCallback<EarningsCallTranscripts>): Request;
-   
-    public transcriptsList(symbol: string, callback: MethodCallback<EarningsCallTranscriptsList>): Request;
-   
-    public upgradeDowngrade(opts: {
-      symbol: string
-      from: Date
-      to: Date
-    }, callback: MethodCallback<UpgradeDowngrade>): Request;
+
+    public transcripts(
+      id: string,
+      callback: MethodCallback<EarningsCallTranscripts>
+    ): Request;
+
+    public transcriptsList(
+      symbol: string,
+      callback: MethodCallback<EarningsCallTranscriptsList>
+    ): Request;
+
+    public upgradeDowngrade(
+      opts: {
+        symbol: string;
+        from: Date;
+        to: Date;
+      },
+      callback: MethodCallback<UpgradeDowngrade>
+    ): Request;
+    public stockDividends(
+      symbol: string,
+      from: Date,
+      to: Date,
+      callback: MethodCallback<Dividends>
+    ): Request;
+    public stockLobbying(
+      symbol: string,
+      from: Date,
+      to: Date,
+      callback: MethodCallback<LobbyingResult>
+    ): Request;
+    public stockNbbo(
+      symbol: string,
+      date: Date,
+      limit: Number,
+      skip: Number,
+      callback: MethodCallback<HistoricalNBBO>
+    ): Request;
+    public stockSplits(
+      symbol: string,
+      from: Date,
+      to: Date,
+      callback: MethodCallback<Split>
+    ): Request;
+    public stockSymbols(
+      exchange: string,
+      opts: {
+        mic: String;
+        securitytype: String;
+        currency: String;
+      },
+      callback: MethodCallback<StockSymbol>
+    ): Request;
+    public stockTick(
+      symbol: string,
+      date: Date,
+      limit: Number,
+      skip: Number,
+      callback: MethodCallback<TickData>
+    ): Request;
+    public stockUsaSpending(
+      symbol: string,
+      from: Date,
+      to: Date,
+      callback: MethodCallback<UsaSpendingResult>
+    ): Request;
+    public stockUsptoPatent(
+      symbol: string,
+      from: Date,
+      to: Date,
+      callback: MethodCallback<UsptoPatentResult>
+    ): Request;
+    public stockVisaApplication(
+      symbol: string,
+      from: Date,
+      to: Date,
+      callback: MethodCallback<VisaApplicationResult>
+    ): Request;
+    public supplyChainRelationships(
+      symbol: string,
+      callback: MethodCallback<SupplyChainRelationships>
+    ): Request;
+    public supportResistance(
+      symbol: string,
+      resolution: string,
+      callback: MethodCallback<SupportResistance>
+    ): Request;
+    public symbolChange(
+      from: string,
+      to: string,
+      callback: MethodCallback<SymbolChange>
+    ): Request;
+    public symbolSearch(
+      q: string,
+      callback: MethodCallback<SymbolLookup>
+    ): Request;
+    public technicalIndicator(
+      symbol: string,
+      resolution: string,
+      from: Date,
+      to: Date,
+      indicator: string,
+      opts: { indicatorFields: object },
+      callback: MethodCallback<technicalIndicatorCallback>
+    ): Request;
+    public transcripts(
+      id: string,
+      callback: MethodCallback<EarningsCallTranscripts>
+    ): Request;
+    public transcriptsList(
+      symbol: string,
+      callback: MethodCallback<EarningsCallTranscriptsList>
+    ): Request;
+    public upgradeDowngrade(
+      opts: { symbol: string; from: Date; to: Date },
+      callback: MethodCallback<UpgradeDowngrade>
+    ): Request;
   }
 }
