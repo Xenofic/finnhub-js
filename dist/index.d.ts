@@ -31,6 +31,12 @@ import ETFsHoldings from "../src/model/ETFsHoldings";
 type MethodCallback<T> = (error: String, data: T, response: String) => void;
 
 declare module "finnhub" {
+  export class ApiClient {
+    public authentications: {
+      api_key: { type: string; apiKey: string };
+    }
+  }
+
   export class DefaultApi {
     declare apiClient: ApiClient;
     public constructor(apiClient?: ApiClient);
