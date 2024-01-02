@@ -35,6 +35,8 @@ declare module "finnhub" {
     public authentications: {
       api_key: { type: string; apiKey: string };
     }
+
+    public static instance: ApiClient;
   }
 
   export class DefaultApi {
